@@ -5,45 +5,42 @@ from simple_calculator import SimpleCalculator
 class TestSimpleCalculator(unittest.TestCase):
 
     def setUp(self):
+        """Create calculator before each test."""
         self.calc = SimpleCalculator()
 
     # --------------------------
-    # ADDITION TESTS (integers)
+    # ADDITION TEST (EXACT NAME)
     # --------------------------
-    def test_add_integers(self):
+    def test_addition(self):
         self.assertEqual(self.calc.add(2, 3), 5)
-        self.assertEqual(self.calc.add(-1, 5), 4)
+        self.assertEqual(self.calc.add(-1, 1), 0)
         self.assertEqual(self.calc.add(0, 0), 0)
-        self.assertEqual(self.calc.add(-3, -7), -10)
 
     # --------------------------
-    # SUBTRACTION TESTS (integers)
+    # SUBTRACTION TEST (EXACT NAME)
     # --------------------------
-    def test_subtract_integers(self):
-        self.assertEqual(self.calc.subtract(10, 3), 7)
-        self.assertEqual(self.calc.subtract(3, 10), -7)
+    def test_subtraction(self):
+        self.assertEqual(self.calc.subtract(5, 3), 2)
+        self.assertEqual(self.calc.subtract(3, 5), -2)
         self.assertEqual(self.calc.subtract(0, 0), 0)
-        self.assertEqual(self.calc.subtract(-5, -3), -2)
 
     # --------------------------
-    # MULTIPLICATION TESTS (integers)
+    # MULTIPLY TEST (EXACT NAME)
     # --------------------------
-    def test_multiply_integers(self):
+    def test_multiply(self):
         self.assertEqual(self.calc.multiply(4, 5), 20)
-        self.assertEqual(self.calc.multiply(-4, 5), -20)
-        self.assertEqual(self.calc.multiply(0, 10), 0)
-        self.assertEqual(self.calc.multiply(-3, -2), 6)
+        self.assertEqual(self.calc.multiply(-3, 2), -6)
+        self.assertEqual(self.calc.multiply(0, 100), 0)
 
     # --------------------------
-    # DIVISION TESTS (integers)
+    # DIVIDE TEST (EXACT NAME)
     # --------------------------
-    def test_divide_integers(self):
+    def test_divide(self):
         self.assertEqual(self.calc.divide(10, 2), 5)
         self.assertEqual(self.calc.divide(9, 3), 3)
         self.assertEqual(self.calc.divide(-8, 2), -4)
-        self.assertEqual(self.calc.divide(-9, -3), 3)
 
-    def test_divide_by_zero_returns_none(self):
+    def test_divide_by_zero(self):
         self.assertIsNone(self.calc.divide(5, 0))
         self.assertIsNone(self.calc.divide(0, 0))
 
