@@ -27,7 +27,7 @@ class TestSimpleCalculator(unittest.TestCase):
     # --------------------------
     # MULTIPLY TEST (EXACT NAME)
     # --------------------------
-    def test_multiplication(self):
+     def test_multiplication(self):
         self.assertEqual(self.calc.multiply(4, 5), 20)
         self.assertEqual(self.calc.multiply(-3, 2), -6)
         self.assertEqual(self.calc.multiply(0, 100), 0)
